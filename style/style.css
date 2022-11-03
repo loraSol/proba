@@ -1,0 +1,19 @@
+.container{
+    margin-top: 5%;
+}
+
+
+
+.jumbotron{
+    width: 100%;
+    height: 50vh;
+}
+
+.card{
+    background-color: rgb(236, 187, 96);
+    padding: 2%;
+}
+
+#card-login{
+    background-color: rgb(255, 255, 255);
+}
