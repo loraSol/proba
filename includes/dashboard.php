@@ -92,7 +92,7 @@ if(!isset($_SESSION["id"])){
                                 <div class="card-body">
                                     <h5 class="card-title">New orders</h5>
                                     <p class="card-text">Here you can make invoices and create new orders.</p>
-                                    <a href="#" class="btn btn-primary">New orders</a>
+                                    <a href="new_orders.php" class="btn btn-primary">New orders</a>
                                 </div>
                             </div>
                         </div>
