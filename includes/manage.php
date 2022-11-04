@@ -148,11 +148,37 @@ class Manage{
 
 
 
+    // Ubacivanje nove porudzbine u bazu
+
+    public function storeOrder($order_date,$employee_name,$rows_tqty,$rows_qty,$rows_price,$rows_name ,$sub_total,
+                                $gst,$net_total,$payment_type){
+  
+        $prepared_statement = $this->con->prepare("INSERT INTO invoice(employee_name,order_date,
+                                sub_total,gst,neto_total,payment_type) VALUES(?,?,?,?,?,?)");
+        $prepared_statement->bind_param("ssddds",$employee_name,$order_date,$sub_total,$gst,$net_total,$payment_type);
+        $prepared_statement->execute() or die($this->con->error);
+        $invoice_id = $prepared_statement->insert_id;            // vraca invoice_id kreiranog objekta
+
+        if($invoice_id != NULL){
+            for($i = 0; $i < count($rows_name) ; $i++){
+                $insert_product_statement = $this->con->prepare("INSERT INTO invoice_details(invoice_id,product_name,
+                                        price,qty) VALUES(?,?,?,?);");
+                $insert_product_statement->bind_param("isdd",$invoice_id,$rows_name[$i],$rows_price[$i],$rows_qty[$i]);
+                $insert_product_statement->execute() or die($this->con->error);
+            }
+            return "INVOICE_INSERTED";
+        } else{
+            return "INVOICE_INSERT_FAILED";
+        }
+
+
+    }
+
 }
 
 
 
-$obj = new Manage();
+//$obj = new Manage();
 //echo "<pre>";
 //print_r($obj->manageRecord("category"));
 //echo $obj->deleteRecord("category",2);
@@ -160,6 +186,6 @@ $obj = new Manage();
 //print_r($obj->getSingleRecord("products",3));
 //echo $obj->update_record("products",["pid"=>5],["product_name"=>"Samsung Galaxy 11"]);
  //echo $obj->getCategoryName(11);
-
+//echo $obj->storeOrder("25-02-2019","zika",[111],[10],[23.3],["coko"],100,2,20,"cek",);
 
 ?>

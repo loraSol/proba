@@ -173,6 +173,7 @@ if(isset($_POST["getNewOrderItem"])){
         <td><b class="number">1</b></td>
         <td>
             <select name="pid[]" class="form-control form-control-sm pid" required>
+                // ovde je izmenjeno 
                 <option>Choose product</option>
                 <?php 
                     foreach($rows as $row){
@@ -185,8 +186,9 @@ if(isset($_POST["getNewOrderItem"])){
         <td><input type="text" name="tqty[]" class="form-control form-control-sm tqty" readonly></td>
         <td><input type="text" name="qty[]" class="form-control form-control-sm qty" required></td>
         <td><input type="text" name="price[]" class="form-control form-control-sm price" readonly ></td>
-        <span><input type="hidden" name="pro_name[]" class="form-control form-control-sm pro_name"></span>
-        <td>Rs.<span class="amount">3003</span></td>
+        <!-- Prikazivao je gresku "undefined array key" jer je tag bio samo span, mora da bude <td> -->
+        <td><span><input name="pro_name[]" type="hidden" class="form-control form-control-sm pro_name"></span></td>
+        <td>Rs.<span class="amount">0</span></td>
     </tr>
 <?php
 
@@ -203,6 +205,38 @@ if(isset($_POST["getPriceAndQty"])){
     exit();
 }
 
+
+
+// isset($_POST["order_date"]) AND isset($_POST["employee_name"])
+// pokupi podatke o novoj narudzbini
+// nije htelo da radi kad je bilo $_POST["#order_date"]
+if(isset($_POST["order_date"]) AND isset($_POST["employee_name"])){
+    $order_date = $_POST["order_date"];
+    $employee_name = $_POST["employee_name"];
+
+    // nizovi
+    $rows_tqty = $_POST["tqty"];
+    $rows_qty = $_POST["qty"];
+    $rows_price = $_POST["price"];
+
+    // ovde je bio problem, nije mogao da prepozna sta je pro_name
+    $rows_name = $_POST["pro_name"];
+
+    // obicne promenljive
+    $sub_total = $_POST["sub_total"];
+    $gst = $_POST["gst"];
+    $net_total = $_POST["net_total"];
+    $payment_type = $_POST["payment_type"];
+
+    //echo ("usao u if");
+    $m = new Manage();
+    $result = $m->storeOrder($order_date,$employee_name,$rows_tqty,$rows_qty,$rows_price,$rows_name ,$sub_total,
+    $gst,$net_total,$payment_type);
+    echo $result;
+    exit();
+} else{
+    //echo("usao u esle");
+}
 
 
 ?>

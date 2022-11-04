@@ -70,9 +70,9 @@ $( document ).ready(function() {
                         $("#category_name").removeClass("border-ranger");
                         $("#cat_error").html("<span class='text-success'>New category added.</span>");
                         $("#category_name").val("");
-                        //fetch_category(); // NE RADI BEZ NOVOG UCITVANJA.... a trebalo da prikaze novu kategoriju kod proizvoda
+                        //fetch_category(); // NE RADI BEZ NOVOG UCITVANJA.... a trebalo bi da prikaze novu kategoriju kod proizvoda
                     } else{
-                        data(alert);
+                        alert(data);
                     }
                 }
             })

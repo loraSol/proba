@@ -73,18 +73,18 @@ if(!isset($_SESSION["id"])){
                         <h3>New Orders</h3>
                     </div>
                     <div class="card-body">
-                        <form onsubmit="return false">
+                        <form id="get_order"  onsubmit="return false">
                             <div class="form-group row">
                                 <label  class="col-sm-3" align="right">Order date</label>
                                 <div class="col-sm-6">
-                                    <input type="text" readonly class="form-control form-control-sm" value="<?php echo date("Y-m-d"); ?>">
+                                    <input type="text" id="order_date" name="order_date" readonly class="form-control form-control-sm" value="<?php echo date("Y-m-d"); ?>">
                                 </div>
                             </div>
 
                             <div class="form-group row">
-                                <label  class="col-sm-3" align="right">Customer Name*</label>
+                                <label  class="col-sm-3" align="right">Employee Name*</label>
                                 <div class="col-sm-6">
-                                    <input type="text" class="form-control form-control-sm" placeholder="Enter customer name" required>
+                                    <input type="text" id="employee_name" name="employee_name" class="form-control form-control-sm" placeholder="Enter your name" required>
                                 </div>
                             </div>
 
@@ -100,6 +100,7 @@ if(!isset($_SESSION["id"])){
                                                 <td style="text-align:center;">Total Quantity</td>
                                                 <td style="text-align:center;">Quantity</td>
                                                 <td style="text-align:center;">Price</td>
+                                                <td></td>
                                                 <th>Total</th>
                                             </tr>
                                             
@@ -134,21 +135,29 @@ if(!isset($_SESSION["id"])){
                             <div class="form-group row">
                                 <label for="sub_total" class="col-sm-3" align="right">Sub total</label>
                                 <div class="col-sm-6">
-                                    <input type="text" name="sub_total" class="form-control form-control-sm" id="sub_total">
+                                    <input type="text" name="sub_total" class="form-control form-control-sm" id="sub_total" readonly>
+                                </div>
+                            </div>
+
+                            <p></p>
+                            <div class="form-group row">
+                                <label for="gst" class="col-sm-3" align="right">GST (20%)</label>
+                                <div class="col-sm-6">
+                                    <input type="text" name="gst" class="form-control form-control-sm" id="gst">
                                 </div>
                             </div>
 
                             <div class="form-group row">
                                 <label for="net_total" class="col-sm-3" align="right">Net total</label>
                                 <div class="col-sm-6">
-                                    <input type="text" name="net_total" class="form-control form-control-sm" id="net_total">
+                                    <input type="text" name="net_total" class="form-control form-control-sm" id="net_total" readonly>
                                 </div>
                             </div>
 
                             <div class="form-group row">
                                 <label for="payment-type" class="col-sm-3" align="right">Payment method</label>
                                 <div class="col-sm-6">
-                                    <select name="payment-type" id="payment-type" class="form-control form-control-sm">
+                                    <select name="payment_type" id="payment_type" class="form-control form-control-sm">
                                         <option>Cash</option>
                                         <option>Card</option>
                                         <option>Cheque</option>
@@ -157,7 +166,7 @@ if(!isset($_SESSION["id"])){
                             </div>
 
                             <center>
-                                <input type="submit" id="order-form" style="width:150px;" class="btn btn-info" value="Order">
+                                <input type="submit" id="order_form" style="width:150px;" class="btn btn-info" value="Order">
                             </center>
 
 
@@ -168,8 +177,6 @@ if(!isset($_SESSION["id"])){
             </div>
         </div>
     </div>
-
-
 </body>
 
 
