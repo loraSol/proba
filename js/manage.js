@@ -16,6 +16,7 @@ $(document).ready(function(){
                     //console.log("delete-test2");
                     if(data == "CATEGORY_DELETED"){
                         alert("Category is deleted.");
+                        window.location.href = "";
                     } else if(data == "DELETE_RESTRICTED"){
                         //console.log("delete-test3");
                         alert("You cannot delete this category because it still contains products.");
@@ -47,6 +48,7 @@ $(document).ready(function(){
                 $("#cid").val(data["cid"]);
                 //console.log("update-test1");
                 $("#update_category").val(data["name_category"]);
+                window.location.href = "";
             }
         })
     })
@@ -66,7 +68,7 @@ $(document).ready(function(){
                 success: function(data){
                     //console.log("hhhhhj");
                     //alert(data);
-                    window.location.href = "";
+                    
                 }
             })
         }
@@ -89,6 +91,7 @@ $(document).ready(function(){
                     //console.log("delete-test2");
                     if(data == "PRODUCT_DELETED"){
                         alert("Product is deleted.");
+                        window.location.href = "";
                     } else if(data == "ERROR_DELETE_PRODUCT"){
                         //console.log("delete-test3");
                         alert("An error occurred while trying to delete product.");

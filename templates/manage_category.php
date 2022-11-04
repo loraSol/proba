@@ -45,7 +45,7 @@ if(!isset($_SESSION["id"])){
             <br>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup"> 
                 <div class="navbar-nav">
-                    <a class="nav-link active" aria-current="page" href="#"><i class="fa fa-home"></i>Home</a>
+                    <a class="nav-link active" aria-current="page" href="../includes/dashboard.php"><i class="fa fa-home"></i>Home</a>
 
                     <!-- Vrati korisnika na Login kad pritisne Logout dugme -->
                     <?php

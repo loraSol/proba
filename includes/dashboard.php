@@ -43,7 +43,7 @@ if(!isset($_SESSION["id"])){
             <br>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup"> 
                 <div class="navbar-nav">
-                    <a class="nav-link active" aria-current="page" href="#"><i class="fa fa-home"></i>Home</a>
+                    <a class="nav-link active" aria-current="page" href="dashboard.php"><i class="fa fa-home"></i>Home</a>
 
                     <!-- Vrati korisnika na Login kad pritisne Logout dugme -->
                     <?php
@@ -74,8 +74,6 @@ if(!isset($_SESSION["id"])){
                         <h5 class="card-title">Profile info</h5>
                         <p class="card-text">Petar Petrovic</p>
                         <p class="card-text">Admin</p>
-                        <p class="card-text">Last login: xxxx-xx-xxxx</p>
-                        <a href="#" class="btn btn-primary">Edit profile</a>
                     </div>
                 </div>
             </div>
@@ -107,9 +105,9 @@ if(!isset($_SESSION["id"])){
     <p></p>
     <div class="container">
         <div class="row">
-            <div class="col-md-4">
-                <div class="card">
-                    <div class="card-body">
+            <div class="col-md-6">
+                <div class="card" style="margin: 20px 0px;">
+                    <div class="card-body"  style="text-align: center;">
                         <h3 class="card-title">Manage Categories</h3>
                         <p class="card-text">Here you can manage your categories.</p>
                         <a href="#" data-toggle="modal" data-target="#form_category" class="btn btn-primary">Add</a>
@@ -118,20 +116,9 @@ if(!isset($_SESSION["id"])){
                 </div>
             </div>
 
-            <div class="col-md-4">
-                <div class="card">
-                    <div class="card-body">
-                        <h3 class="card-title">Manage Brands</h3>
-                        <p class="card-text">Here you can manage your brands.</p>
-                        <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#form_brand">Add</a>
-                        <a href="#" class="btn btn-primary">Manage</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-4">
-                <div class="card" >
-                    <div class="card-body">
+            <div class="col-md-6">
+                <div class="card" style="margin: 20px 0px;">
+                    <div class="card-body" style="text-align: center;">
                         <h3 class="card-title">Manage Products</h3>
                         <p class="card-text">Here you can manage your products.</p>
                         <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#form_products">Add</a>
