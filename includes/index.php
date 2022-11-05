@@ -19,21 +19,21 @@ if(isset($_SESSION["id"])){
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="../style/style.css">
+    <link rel="stylesheet type="text/css" href="../style/style.css"/>
     <script src = "../js/main.js"></script>
     
 
 </head>
 
 
-<body>
+<body style="background-color: #FFC06E;">
 
 
 
 <!-- -->
-<nav class="navbar" style="background-color: beige;">
+<nav class="navbar" style="background-color: #01A66F;">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">Inventory system</a>
+    <a class="navbar-brand" href="#" style="color:#F3E0DC;"><i class="fa fa-leaf"></i>Gardening World</a>
     <!-- dugme koje treba da se pojavi kad se smanji rezolucija pa meni treba da bude padajuci, NE RADI KAKO TREBA
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -42,7 +42,7 @@ if(isset($_SESSION["id"])){
     <br>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup"> 
       <div class="navbar-nav">
-        <a class="nav-link active" aria-current="page" href="index.php"><i class="fa fa-home"></i>Home</a>
+        <a class="nav-link active" aria-current="page" href="index.php" style="color:#F3E0DC; padding-left:50px;"><i class="fa fa-home"></i>Home</a>
         
     </div>
     </div>
@@ -50,28 +50,28 @@ if(isset($_SESSION["id"])){
 </nav>
 
 
-<div class="container" id = "card-login">
+<div class="container" id = "card-login" style="background-color: #01A66F; padding: 2% 28%; box-shadow:20px 20px 20px 20px #01A66F;">
 
-    <div class="card" style="width: 30vw;">
-        <img src="../images/login.jpg" style="width:80%" class="card-img-top" alt="Login icon">
+    <div id="login-card" class="card" style="width: 30vw; background-color: #FFC06E; padding-bottom:50px; ">
+        <img src="../images/login.png" style="width:80%; padding: 1% 10% 1% 5%; class="card-img-top" alt="Login icon">
         <div class="card-body">
-
 
             <form id = "form_log" onsubmit = "return false">
                 <!-- Email input -->
                 <div class="form-outline mb-4">
+                <label class="form-label" for="form2Example1">Email address</label>
                     <input type="email" id = "log_email" name="log_email" class="form-control" required />
-                    <label class="form-label" for="form2Example1">Email address</label>
                 </div>
 
                 <!-- Password input -->
                 <div class="form-outline mb-4">
+                <label class="form-label" for="form2Example2">Password</label>
                     <input type="password" id="log_password" name = "log_password" class="form-control" required/>
-                    <label class="form-label" for="form2Example2">Password</label>
                 </div>
+                <br>
 
                 <!-- Submit button -->
-                <button id = "dugme" type="sumbit" class="btn btn-primary btn-block mb-4">Log in</button>
+                <button id = "dugme" type="sumbit" style="width:100%; background-color: #01A66F;" class="btn btn-primary btn-block mb-4">Log in</button>
             </form>
 
         </div>

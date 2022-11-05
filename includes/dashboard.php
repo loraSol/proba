@@ -62,7 +62,7 @@ if(!isset($_SESSION["id"])){
     </nav>
 
 
-    <div class="container">
+    <div class="container" id="dash">
         <div class="row">
 
             <div class="col-md-4">
